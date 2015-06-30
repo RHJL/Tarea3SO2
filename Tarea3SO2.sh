@@ -9,8 +9,6 @@ case "$1" in
               kill `cat /var/run/Tarea3SO2.pid`
               ;;
 	restart)
-		test -e /var/run/Tarea3SO2.pid || exit 2
-              kill `cat /var/run/Tarea3SO2.pid`
 		/usr/bin/Tarea3SO2
 		;;
         *)
