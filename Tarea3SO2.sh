@@ -1,0 +1,21 @@
+#!/bin/sh
+ 
+case "$1" in
+        start)
+              /usr/bin/Tarea3SO2
+              ;;
+        stop)
+              test -e /var/run/Tarea3SO2.pid || exit 2
+              kill `cat /var/run/Tarea3SO2.pid`
+              ;;
+	restart)
+		test -e /var/run/Tarea3SO2.pid || exit 2
+              kill `cat /var/run/Tarea3SO2.pid`
+		/usr/bin/Tarea3SO2
+		;;
+        *)
+              echo "El uso es: $0 {start|stop|restart}"
+              exit 1
+              ;;
+esac
+exit 0
